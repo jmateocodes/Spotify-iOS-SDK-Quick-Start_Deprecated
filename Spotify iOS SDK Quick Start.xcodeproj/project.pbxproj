@@ -42,7 +42,10 @@
 		182AD96622CC71DB00B66A45 /* ios-sdk-1.0.2.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "ios-sdk-1.0.2.zip"; path = "../../Downloads/ios-sdk-1.0.2.zip"; sourceTree = "<group>"; };
 		182AD96822CC71F100B66A45 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../../Downloads/ios-sdk-1.0.2/SpotifyiOS.framework"; sourceTree = "<group>"; };
 		182AD96A22CC76E300B66A45 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		183F813022CC9F2E00A13EBD /* Spotify iOS SDK Quick Start-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spotify iOS SDK Quick Start-Bridging-Header.h"; sourceTree = "<group>"; };
+		183F813122CC9F2E00A13EBD /* Spotify_iOS_SDK_Quick_Start-Bridging-Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spotify_iOS_SDK_Quick_Start-Bridging-Header.swift"; sourceTree = "<group>"; };
 		1884631E22CC81DB00B9A38D /* Spotify iOS SDK Quick Start */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Spotify iOS SDK Quick Start"; sourceTree = "<group>"; };
+		189A038022CCA12700E29806 /* Spotify iOS SDK Quick Start.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Spotify iOS SDK Quick Start.entitlements"; path = "Spotify iOS SDK Quick Start/Spotify iOS SDK Quick Start.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +77,15 @@
 		18199C7422CC701000E1DD41 = {
 			isa = PBXGroup;
 			children = (
+				189A038022CCA12700E29806 /* Spotify iOS SDK Quick Start.entitlements */,
+				183F813122CC9F2E00A13EBD /* Spotify_iOS_SDK_Quick_Start-Bridging-Header.swift */,
 				1884631E22CC81DB00B9A38D /* Spotify iOS SDK Quick Start */,
 				182AD96A22CC76E300B66A45 /* Default-568h@2x.png */,
 				18199C9822CC701100E1DD41 /* Spotify iOS SDK Quick StartTests */,
 				18199CA322CC701100E1DD41 /* Spotify iOS SDK Quick StartUITests */,
 				18199C7E22CC701000E1DD41 /* Products */,
 				182AD96522CC71DB00B66A45 /* Frameworks */,
+				183F813022CC9F2E00A13EBD /* Spotify iOS SDK Quick Start-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +193,12 @@
 				TargetAttributes = {
 					18199C7C22CC701000E1DD41 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					18199C9422CC701100E1DD41 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -316,10 +328,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Spotify iOS SDK Quick Start/Spotify iOS SDK Quick Start.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -336,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,10 +391,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Spotify iOS SDK Quick Start/Spotify iOS SDK Quick Start.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -391,11 +407,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -403,16 +420,23 @@
 		18199CAA22CC701100E1DD41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Spotify iOS SDK Quick Start/Spotify iOS SDK Quick Start.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick Start/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-Start";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify iOS SDK Quick Start-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -420,16 +444,22 @@
 		18199CAB22CC701100E1DD41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Spotify iOS SDK Quick Start/Spotify iOS SDK Quick Start.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick Start/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-Start";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify iOS SDK Quick Start-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -438,7 +468,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick StartTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,6 +479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-StartTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spotify iOS SDK Quick Start.app/Spotify iOS SDK Quick Start";
 			};
@@ -456,7 +489,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick StartTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,6 +500,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-StartTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spotify iOS SDK Quick Start.app/Spotify iOS SDK Quick Start";
 			};
@@ -473,7 +509,9 @@
 		18199CB022CC701100E1DD41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick StartUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-StartUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Spotify iOS SDK Quick Start";
 			};
@@ -490,7 +529,9 @@
 		18199CB122CC701100E1DD41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D5953SK3D;
 				INFOPLIST_FILE = "Spotify iOS SDK Quick StartUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,6 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Johanny.Spotify-iOS-SDK-Quick-StartUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Spotify iOS SDK Quick Start";
 			};
